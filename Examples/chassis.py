@@ -1,14 +1,16 @@
 import sys
 import os
-from pynput import keyboard
 import time
+from pynput import keyboard
+
+# setting paths
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Communication'))
 
 from communicator import UARTCommunicator
+import config
 
 if __name__ == '__main__':
-    # setting path
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-    import config
     uart = UARTCommunicator(config)
     cmd_id = uart.cfg.CHASSIS_CMD_ID
 
